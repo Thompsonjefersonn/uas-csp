@@ -51,14 +51,17 @@ export async function login(formData: FormData) {
   redirect('/dashboard')
 }
 
-export async function logout() {
+export async function logout(formData: FormData) {
   const supabase = await createClient()
+
 
   const { error } = await supabase.auth.signOut()
 
   if (error) {
-    return { error: error.message }
+    console.log('Logout error:', error.message)
+    redirect('/login?error=true')
   }
 
+  // ✅ Redirect jika sukses
   redirect('/login')
 }
