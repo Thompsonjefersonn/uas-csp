@@ -31,6 +31,7 @@ export default async function DashboardPage() {
             </h1>
             <p className="text-gray-600 mt-1">Welcome back, {user.email}!</p>
           </div>
+          
           <form action={logout}>
             <button
               type="submit"

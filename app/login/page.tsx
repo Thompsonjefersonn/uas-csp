@@ -18,7 +18,7 @@ export default function LoginPage() {
         setError(result.error)
       }
     } catch (err) {
-      setError('An unexpected error occurred')
+      
     } finally {
       setLoading(false)
     }
